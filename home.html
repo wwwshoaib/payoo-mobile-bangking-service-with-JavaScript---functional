@@ -51,12 +51,80 @@
         <div class="mockup-phone">
             <div class="camera"></div>
             <div class="display">
-                <div class="artboard artboard-demo phone-1">Hi.</div>
+                <div class="artboard artboard-demo phone-3">
+                    <!-- stat: balance account -->
+                    <div class="stats shadow">
+                        <div class="stat">
+                            <div class="stat-title">Account Balance</div>
+                            <div id="account-balance" class="stat-value">500</div>
+                        </div>
+                    </div>
+                    <!-- divider -->
+                    <div class="divider"></div>
+                    <!-- add money button and cash out button -->
+                    <!-- User action buttons -->
+                    <div>
+                        <button id="btn-show-add-money" class="btn btn-md btn-success">Add Money</button>
+                        <button id="btn-show-cash-out" class="btn btn-md btn-success">Cash Out</button>
+                    </div>
+                    <!-- divider -->
+                    <div class="divider"></div>
+                    <!-- add money form starts here -->
+                    <div class=" card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                        <form class="card-body">
+                            <div class="form-control">
+                                <label class="label">
+                                    <span  class="label-text font-semibold">Add Money Amount</span>
+                                </label>
+                                <input id="input-add-money" type="text" placeholder="Enter money amount" class="input input-bordered" required />
+                            </div>
+                            <div class="form-control">
+                                <label class="label">
+                                    <span  class="label-text font-semibold">PIN Number</span>
+                                </label>
+                                <input id="input-pin-number" type="password" placeholder="Enter PIN number " class="input input-bordered" required />
+                               
+                            </div>
+                            <div class="form-control mt-6">
+                                <button id="btn-add-money" class="btn btn-primary">Add Money</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- add money form ends here --> 
+
+                     <!-- cash out form starts here -->
+                     <div  class=" hidden card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                        <form class="card-body">
+                            <div class="form-control">
+                                <label class="label">
+                                    <span  class="label-text font-semibold">Cash Out Amount</span>
+                                </label>
+                                <input id="input-cash-out" type="text" placeholder="Cash out amount" class="input input-bordered" required />
+                            </div>
+                            <div class="form-control">
+                                <label class="label">
+                                    <span  class="label-text font-semibold">PIN Number</span>
+                                </label>
+                                <input id="input-cash-out-pin-number" type="password" placeholder="Enter PIN number " class="input input-bordered" required />
+                               
+                            </div>
+                            <div class="form-control mt-6">
+                                <button id="btn-cash-out" class="btn btn-primary">Cash Out</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- cash out  form ends here -->
+
+
+                </div>
             </div>
         </div>
         <!-- slat: Account balance -->
 
     </main>
+    <script src="./js/utlities.js"></script>
+    <script src="./js/addMoney.js"></script>
+    <script src="./js/cash-out.js"></script>
 </body>
 
 </html>
