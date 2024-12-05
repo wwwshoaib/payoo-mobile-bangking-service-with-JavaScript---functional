@@ -4,7 +4,7 @@ document.getElementById('btn-cash-out')
     const cashOut = getInputFieldValueById('input-cash-out');
     const pinNumber = getInputFieldValueById('input-cash-out-pin-number');
 
-    if(isNaN(cashOut)) {
+    if(isNaN(cashOut) || cashOut<0) {
         alert('Failed to cash out');
         return;
     }
@@ -21,6 +21,8 @@ document.getElementById('btn-cash-out')
         }
         const balanceNew = balance - cashOut;
         document.getElementById('account-balance').innerText = balanceNew;
+
+        // transaction history
 
         const div = document.createElement('div');
         div.classList.add('bg-yellow-300');

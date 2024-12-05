@@ -1,44 +1,43 @@
 // add money button
 
-document.getElementById('btn-add-money')
-    .addEventListener('click', function (event) {
-        event.preventDefault();
-        const addMoneyNumber = getInputFieldValueById('input-add-money');
-        const pinNumber = getInputFieldValueById('input-pin-number');
-        if(isNaN(addMoneyNumber)) {
-            alert('Failed to cash out');
-            return;
-        }
-    
+document.getElementById('btn-add-money').addEventListener('click', function (event) {
+    event.preventDefault();
+    const addMoney = getInputFieldValueById('input-add-money');
+    const pinNumber = getInputFieldValueById('input-pin-number');
 
-        // validation pin number (wrong way)
-
-        if (pinNumber === 1234) {
-            const balance = getTextFieldValueById('account-balance');
-            const balanceNew = balance + addMoneyNumber;
-            document.getElementById('account-balance').innerText = balanceNew;
-
-            // add transaction history (without function)
-            const div = document.createElement('div');
-            p.innerHTML = `Credited ${addMoneyNumber} taka. C/B: ${balanceNew} taka`;
-            document.getElementById('transaction-id').appendChild(div);
-
-            // toast
-
-            <div class="toast toast-top toast-start">
-                <div class="alert alert-info">
-                    <span>New mail arrived.</span>
-                </div>
-                <div class="alert alert-success">
-                    <span>Message sent successfully.</span>
-                </div>
-            </div>
-
-        }
-
-        else {
-            alert('Failed adding money !');
-        }
+    if (isNaN(addMoney) || addMoney<0) {
+        alert('Failed to add money');
+        return;
+    }
 
 
-    })
+
+
+
+    // validation pin number (wrong way)
+
+    if (pinNumber === 1234) {
+        const balance = getTextFieldValueById('account-balance');
+        const balanceNew = balance + addMoney;
+        document.getElementById('account-balance').innerText = balanceNew;
+
+       
+        // transaction history
+
+        const div = document.createElement('div');
+        div.classList.add('bg-yellow-300');
+        div.innerHTML = `
+        <h4 class = "text-xl text-semibold">Add Money: </h4>
+        <p> Credited ${addMoney} taka. C/B: ${balanceNew} taka
+
+        `
+        document.getElementById('transaction-id').appendChild(div);
+
+    }
+
+    else {
+        alert('Failed adding money !');
+    }
+
+
+});
